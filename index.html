@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>XSS</title>
+</head>
+<body>
+  <a href="/stored">存储型XSS</a>
+  <h3>反射型XSS</h3>
+  <a href="/reflected?value=1">链接中不带代码</a>
+  <a href="/reflected?value=<script>alert(1)</script>">链接中带有代码</a>
+</body>
+</html>
