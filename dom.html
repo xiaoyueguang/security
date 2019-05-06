@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>基于DOM的XSS</title>
+</head>
+<body>
+  <h1>基于DOM的XSS</h1>
+
+  <p>常见于富文本等, 在富文本中写入攻击代码, 最终实现会类似下面的内容</p>
+
+  <br />
+  <a href="/reflected?value=<script>alert(1)</script>">通过链接跳转攻击的反射型XSS</a>
+  <button onclick="alert('XSS')">通过onclick运行自定义的代码</button>
+  <img src="abc" onerror="alert('利用图片加载失败 触发onerror')" />
+</body>
+</html>

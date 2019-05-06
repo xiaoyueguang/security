@@ -22,6 +22,10 @@ app.use((req, res) => {
   if (req.url.includes('/reflected')) {
     res.send(templateRender('./reflected.html', req.query))
   }
+
+  if (req.url === '/dom') {
+    res.send(templateRender('./dom.html'))
+  }
 })
 
 // 服务器正在运行。
