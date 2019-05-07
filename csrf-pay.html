@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSRF 支付页面</title>
+</head>
+<body>
+  <article>
+    <h1>正常网站</h1>
+    <p>当前sessionId为: #{sessionId}</p>
+    <p>当前用户为: #{name}</p>
+    <p>金额为: #{amount}</p>
+
+    <button onclick="login()">点击登录</button>
+
+    <form action="http://pay.csrf.com:3000/transfer">
+      <p>
+        <label>转账目标ID</label>
+        <input type="text" name="to" value="2" />
+      </p>
+      <p>
+        <label>转账金额</label>
+        <input type="text" name="amount" value="100" />
+      </p>
+      <button type="submit">提交</button>
+    </form>
+  </article>
+</body>
+
+<script>
+  function login () {
+    console.log(111)
+    window.open('/loginUser1')
+    setTimeout(function () {
+      location.reload()
+    }, 1500)
+  }
+</script>
+</html>

